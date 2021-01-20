@@ -48,6 +48,193 @@ console.log(name)
 
 
 
+#### Array.map ()
+
+*  `map()`메서드는 각 배열 요소에 대해 함수를 수행하여 새 배열을 만듭니다.
+*  `map()`메서드는 값이없는 배열 요소에 대해 함수를 실행하지 않습니다.
+* `map()`메서드는 원래 배열을 변경하지 않습니다.
+
+```javascript
+var numbers1 = [45, 4, 9, 16, 25];
+var numbers2 = numbers1.map(myFunction);
+
+function myFunction(value) {
+ return value * 2;
+}
+```
+
+
+
+#### Array.filter ()
+
+* `filter()`메서드는 테스트를 통과 한 배열 요소로 새 배열을 만듭니다.
+
+* 이 예제는 값이 18보다 큰 요소에서 새 배열을 만듭니다.
+
+```javascript
+var numbers = [45, 4, 9, 16, 25];
+var over18 = numbers.filter(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+} // {45, 25}
+```
+
+
+
+#### Array.reduce ()
+
+* `reduce()`메서드는 각 배열 요소에서 함수를 실행하여 단일 값을 생성 (축소)합니다.
+
+* 이 `reduce()`방법은 배열에서 왼쪽에서 오른쪽으로 작동합니다. 
+
+```js
+var numbers1 = [45, 4, 9, 16, 25];
+var sum = numbers1.reduce(myFunction);
+
+function myFunction(total, value, index, array) {
+  return total + value;
+} // {99}
+```
+
+
+
+#### Array.every ()
+
+이 `every()`메서드는 모든 배열 값이 테스트를 통과하는지 확인합니다.
+
+```js
+var numbers = [45, 4, 9, 16, 25];
+var allOver18 = numbers.every(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+} // false
+```
+
+
+
+#### Array.some ()
+
+이 `some()`메서드는 일부 배열 값이 테스트를 통과하는지 확인합니다.
+
+```js
+var numbers = [45, 4, 9, 16, 25];
+var someOver18 = numbers.some(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+} // true
+```
+
+
+
+#### Array.find ()
+
+이 `find()`메서드는 테스트 함수를 통과하는 첫 번째 배열 요소의 값을 반환합니다.
+
+```js
+var numbers = [4, 9, 16, 25, 29];
+var first = numbers.find(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+```
+
+
+
+#### Array.findIndex ()
+
+이 `findIndex()`메서드는 테스트 함수를 통과하는 첫 번째 배열 요소의 인덱스를 반환합니다.
+
+```js
+var numbers = [4, 9, 16, 25, 29];
+var first = numbers.findIndex(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+```
+
+
+
+#### Comparing Different Types
+
+| 2 < "12"       | true     |
+| -------------- | -------- |
+| **"2" > "12"** | **true** |
+
+* 두 문자열을 비교할 때 "2"는 (알파벳순) 1이 2보다 작기 때문에 "12"보다 큽니다.
+* 적절한 결과를 얻으려면 비교 전에 변수를 적절한 유형으로 변환해야합니다.
+
+
+
+#### Strict Comparison
+
+Switch cases use **strict** comparison (===).
+
+```js
+var x = "0";
+switch (x) {
+  case 0:
+    text = "Off";
+    break;
+  case 1:
+    text = "On";
+    break;
+  default:
+    text = "No value found";
+} // No value found
+```
+
+
+
+
+
+#### Automatic Type Conversion
+
+```js
+5 + null    // returns 5         because null is converted to 0
+"5" + null  // returns "5null"   because null is converted to "null"
+"5" + 2     // returns "52"      because 2 is converted to "2"
+"5" - 2     // returns 3         because "5" is converted to 5
+"5" * "2"   // returns 10        because "5" and "2" are converted to 5 and 2
+```
+
+
+
+| Original Value   | Converted to Number | Converted to String | Converted to Boolean | Try it                                                       |
+| :--------------- | :------------------ | :------------------ | :------------------- | :----------------------------------------------------------- |
+| false            | 0                   | "false"             | false                | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_false) |
+| true             | 1                   | "true"              | true                 | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_true) |
+| 0                | 0                   | "0"                 | false                | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_number_0) |
+| 1                | 1                   | "1"                 | true                 | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_number_1) |
+| "0"              | 0                   | "0"                 | true                 | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_string_0) |
+| "000"            | 0                   | "000"               | true                 | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_string_000) |
+| "1"              | 1                   | "1"                 | true                 | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_string_1) |
+| NaN              | NaN                 | "NaN"               | false                | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_nan) |
+| Infinity         | Infinity            | "Infinity"          | true                 | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_infinity) |
+| -Infinity        | -Infinity           | "-Infinity"         | true                 | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_infinity_minus) |
+| ""               | 0                   | ""                  | false                | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_string_empty) |
+| "20"             | 20                  | "20"                | true                 | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_string_number) |
+| "twenty"         | NaN                 | "twenty"            | true                 | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_string_text) |
+| [ ]              | 0                   | ""                  | true                 | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_array_empty) |
+| [20]             | 20                  | "20"                | true                 | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_array_one_number) |
+| [10,20]          | NaN                 | "10,20"             | true                 | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_array_two_numbers) |
+| ["twenty"]       | NaN                 | "twenty"            | true                 | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_array_one_string) |
+| ["ten","twenty"] | NaN                 | "ten,twenty"        | true                 | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_array_two_strings) |
+| function(){}     | NaN                 | "function(){}"      | true                 | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_function) |
+| { }              | NaN                 | "[object Object]"   | true                 | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_object) |
+| null             | 0                   | "null"              | false                | [Try it »](https://www.w3schools.com/js/tryit.asp?filename=tryjs_type_convert_null) |
+| undefined        | NaN                 | "undefined"         | false                |                                                              |
+
+#### >> 01.20 Array Sort ~ RegExp
+
+
+
+
+
 ------
 
 ### 2. Learn DOM Manipulation
@@ -104,8 +291,6 @@ console.log(foo); // undefined
 foo = 1; // 할당문에서 할당 단계가 실행된다.
 console.log(foo); // 1
 ```
-
-
 
 ### 6. Event Bubbling
 
