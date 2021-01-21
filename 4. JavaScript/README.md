@@ -6,44 +6,6 @@
 
 #### >> 01.18 Introduction ~ String Method
 
-#### `var` vs `const` vs `let` [#](https://velog.io/@bathingape/JavaScript-var-let-const-%EC%B0%A8%EC%9D%B4%EC%A0%90)
-
-* `var` 은 유연한 변수 선언으로 여러번의 선언이 가능하다.
-* `let` 은 변수에 재할당이 가능하다.
-
-```js
-let name = 'bathingape'
-console.log(name) // bathingape
-
-let name = 'javascript'
-console.log(name) 
-// Uncaught SyntaxError: Identifier 'name' has already been declared
-
-name = 'react'
-console.log(name) //react
-```
-
-* `const`는 변수 재선언, 변수 재할당 모두 불가능하다.
-
-```js
-const name = 'bathingape'
-console.log(name) // bathingape
-
-const name = 'javascript'
-console.log(name) 
-// Uncaught SyntaxError: Identifier 'name' has already been declared
-
-name = 'react'
-console.log(name) 
-//Uncaught TypeError: Assignment to constant variable.
-```
-
-* 변수 선언에는 기본적으로 `const`를 사용하고, 재할당이 필요한 경우에 한정해 `let` 을 사용하는 것이 좋다.
-
-* 그리고 객체를 재할당하는 경우는 생각보다 흔하지 않다. `const` 를 사용하면 의도치 않은 재할당을 방지해 주기 때문에 보다 안전하다.
-  * 재할당이 필요한 경우에 한정해 `let` 을 사용한다. 이때, 변수의 스코프는 최대한 좁게 만든다.
-  * 재할당이 필요 없는 상수와 객체에는 `const` 를 사용한다.
-
 #### >> 01.19 String Method ~ Array Sort
 
 
@@ -190,8 +152,6 @@ switch (x) {
 
 
 
-
-
 #### Automatic Type Conversion
 
 ```js
@@ -233,19 +193,103 @@ switch (x) {
 
 
 
+#### fianlly는 try catch와 상관없이 실행한다
+
+```js
+try {
+  Block of code to try
+}
+catch(err) {
+  Block of code to handle errors
+}
+finally {
+  Block of code to be executed regardless of the try / catch result
+}
+```
+
+
+
+#### >> 01.21 RegExp ~ Best Practices
+
 
 
 ------
 
 ### 2. Learn DOM Manipulation
 
+
+
+
+
 ------
 
 ### 3. Learn Fetch API / Ajax (XHR)
 
+
+
+
+
 ------
 
 ### 4. ES6+ and modular JavaScript
+
+#### Arrow Function
+
+```js
+hello = function() {
+  return "Hello World!";
+}
+```
+
+Arrow functions allow us to write shorter function syntax:
+
+```js
+hello = () => {
+  return "Hello World!";
+}
+```
+
+you can remove the brackets *and* the `return` keyword:
+
+```js
+hello = () => "Hello World!";
+```
+
+
+
+#### Classes
+
+```js
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+}
+```
+
+**자바스크립트에서 클래스는 오브젝트가 아니다.** 자바스크립트 오브젝트를 위한 **템플릿** 이다
+
+```js
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age() {
+    let date = new Date();
+    return date.getFullYear() - this.year;
+  }
+}
+
+let myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML =
+"My car is " + myCar.age() + " years old.";
+```
+
+
+
+
 
 ------
 
@@ -292,11 +336,92 @@ foo = 1; // 할당문에서 할당 단계가 실행된다.
 console.log(foo); // 1
 ```
 
+
+
+#### 초기화는 호이스팅 되지 않음
+
+```js
+var x = 5; // Initialize x
+
+elem = document.getElementById("demo"); // Find an element
+elem.innerHTML = x + " " + y;           // Display x and y
+
+var y = 7; // Initialize y
+```
+
+
+
 ### 6. Event Bubbling
+
+
+
+
 
 ------
 
 ### 7. Scope
+
+#### `var` vs `const` vs `let` [#](https://velog.io/@bathingape/JavaScript-var-let-const-%EC%B0%A8%EC%9D%B4%EC%A0%90)
+
+* `var` 은 유연한 변수 선언으로 여러번의 선언이 가능하다.
+* `let` 은 변수에 재할당이 가능하다.
+
+```js
+let name = 'bathingape'
+console.log(name) // bathingape
+
+let name = 'javascript'
+console.log(name) 
+// Uncaught SyntaxError: Identifier 'name' has already been declared
+
+name = 'react'
+console.log(name) //react
+```
+
+
+
+* `const`는 변수 재선언, 변수 재할당 모두 불가능하다.
+
+```js
+const name = 'bathingape'
+console.log(name) // bathingape
+
+const name = 'javascript'
+console.log(name) 
+// Uncaught SyntaxError: Identifier 'name' has already been declared
+
+name = 'react'
+console.log(name) 
+//Uncaught TypeError: Assignment to constant variable.
+```
+
+* 변수 선언에는 기본적으로 `const`를 사용하고, 재할당이 필요한 경우에 한정해 `let` 을 사용하는 것이 좋다.
+
+* 그리고 객체를 재할당하는 경우는 생각보다 흔하지 않다. `const` 를 사용하면 의도치 않은 재할당을 방지해 주기 때문에 보다 안전하다.
+  * 재할당이 필요한 경우에 한정해 `let` 을 사용한다. 이때, 변수의 스코프는 최대한 좁게 만든다.
+  * 재할당이 필요 없는 상수와 객체에는 `const` 를 사용한다.
+
+
+
+#### 예시
+
+```js
+const x = 2;       // Allowed
+const x = 3;       // Not allowed
+x = 3;             // Not allowed
+var x = 3;         // Not allowed
+let x = 3;         // Not allowed
+
+{
+  const x = 2;   // Allowed
+  const x = 3;   // Not allowed
+  x = 3;         // Not allowed
+  var x = 3;     // Not allowed
+  let x = 3;     // Not allowed
+}
+```
+
+
 
 ------
 
@@ -309,3 +434,11 @@ console.log(foo); // 1
 ------
 
 ### 10. Strict
+
+#### 엄격모드 (use strict) [#](https://ko.javascript.info/strict-mode)
+
+* 지시자 `"use strict"`, 혹은 `'use strict'`는 단순한 문자열처럼 생겼습니다. 하지만 이 지시자가 스크립트 최상단에 오면 스크립트 전체가 “모던한” 방식으로 동작합니다.
+
+* 모던 자바스크립트는 '클래스’와 '모듈’이라 불리는 진일보한 구조를 제공합니다(클래스와 모듈에 대해선 당연히 뒤에서 학습할 예정입니다). 이 둘을 사용하면 `use strict`가 자동으로 적용되죠. 따라서 이 둘을 사용하고 있다면 스크립트에 `"use strict"`를 붙일 필요가 없습니다.
+
+* 결론은 이렇습니다. **코드를 클래스와 모듈을 사용해 구성한다면 `"use strict"`를 생략해도 됩니다. 그런데 아직은 이 둘을 배우지 않았으니 `"use strict"`를 귀한 손님처럼 모시도록 하겠습니다.**
