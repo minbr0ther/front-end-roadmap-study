@@ -2,7 +2,7 @@
 
 ## 4. JavaScript
 
-### 0. Study Log
+### 1. Syntax and Basic Constructs 
 
 #### >> 01.18 Introduction ~ String Method
 
@@ -18,9 +18,9 @@
 
 #### >> 01.23 ES5 ~ ES6 Promise
 
+#### >> 01.24 ES6 Promise ~ END
 
 
-### 1. Syntax and Basic Constructs 
 
 ------
 
