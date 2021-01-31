@@ -2,6 +2,8 @@
 
 ## 4. JavaScript
 
+![image](https://user-images.githubusercontent.com/24728385/106382529-85f46d00-6403-11eb-87be-7bf5ef9097f9.png)
+
 ### 1. Syntax and Basic Constructs 
 
 #### >> 01.18 Introduction ~ String Method
