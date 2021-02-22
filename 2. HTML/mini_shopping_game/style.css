@@ -1,0 +1,42 @@
+:root {
+  /* color */
+  --black-color: #373d44;
+
+  /* Size */
+  --padding: 12px;
+
+  /* Font Size */
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  /* 박스나 마진을 줬을때, 그것이 포함되도록 함 */
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black-color);
+}
+
+ul {
+  /* 리스트 스타일 (불렛) 없애기 */
+  list-style: none;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  padding: calc(var(--padding) * 2);
+}
+
+.menu > ul {
+  display: flex;
+}
+
+.menu > ul > li {
+  padding: var(--padding);
+}
