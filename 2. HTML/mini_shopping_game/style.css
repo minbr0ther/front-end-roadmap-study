@@ -27,16 +27,83 @@ ul {
   list-style: none;
 }
 
+.fixedBar {
+  position: sticky;
+  top: 0;
+  /* 상단바 고정 중요! */
+  background-color: var(--black-color);
+}
+
 .logo {
   display: flex;
   justify-content: center;
-  padding: calc(var(--padding) * 2);
+  margin: calc(var(--padding) * 1);
 }
 
 .menu > ul {
   display: flex;
+  justify-content: center;
 }
 
 .menu > ul > li {
   padding: var(--padding);
+  cursor: pointer;
+}
+
+.logo:hover,
+.menu > ul > li:hover {
+  transform: scale(1.1);
+  transition: all 0.1s ease-in-out;
+}
+
+li > img {
+  height: 3em;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: white;
+  padding: var(--padding);
+  font-size: 1em;
+  margin-right: -0.3em;
+}
+
+#blue {
+  background-color: #3b80bb;
+}
+
+#yellow {
+  background-color: #f3b92b;
+}
+
+#pink {
+  background-color: #f16678;
+}
+
+#lists {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+.clothesList {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  width: 460px;
+  margin: 0.5em;
+  border-radius: 5px;
+  padding: 0.5em 2em;
+}
+
+.clothesList > img {
+  height: 3em;
+}
+
+.clothesList > div {
+  margin-left: calc(var(--padding) * 2);
 }

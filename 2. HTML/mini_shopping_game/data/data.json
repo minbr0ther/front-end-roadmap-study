@@ -1,0 +1,88 @@
+{
+    "clothesList" : [
+        {
+            "color" : "pink",
+            "type" : "t",
+            "sex" : "female",
+            "size" : "large"
+        },
+        {
+            "color" : "blue",
+            "type" : "p",
+            "sex" : "man",
+            "size" : "small"
+        },
+        {
+            "color" : "yellow",
+            "type" : "p",
+            "sex" : "man",
+            "size" : "large"
+        },
+        {
+            "color" : "yellow",
+            "type" : "s",
+            "sex" : "man",
+            "size" : "large"
+        },
+        {
+            "color" : "blue",
+            "type" : "s",
+            "sex" : "female",
+            "size" : "small"
+        },
+        {
+            "color" : "blue",
+            "type" : "t",
+            "sex" : "male",
+            "size" : "large"
+        },
+        {
+            "color" : "yellow",
+            "type" : "t",
+            "sex" : "man",
+            "size" : "small"
+        },
+        {
+            "color" : "pink",
+            "type" : "p",
+            "sex" : "female",
+            "size" : "large"
+        },
+        {
+            "color" : "blue",
+            "type" : "s",
+            "sex" : "man",
+            "size" : "small"
+        },
+        {
+            "color" : "pink",
+            "type" : "t",
+            "sex" : "man",
+            "size" : "large"
+        },
+        {
+            "color" : "yellow",
+            "type" : "p",
+            "sex" : "man",
+            "size" : "large"
+        },
+        {
+            "color" : "blue",
+            "type" : "s",
+            "sex" : "female",
+            "size" : "small"
+        },
+        {
+            "color" : "blue",
+            "type" : "s",
+            "sex" : "male",
+            "size" : "large"
+        },
+        {
+            "color" : "yellow",
+            "type" : "t",
+            "sex" : "man",
+            "size" : "large"
+        }
+    ]
+}
