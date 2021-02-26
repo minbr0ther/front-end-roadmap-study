@@ -42,41 +42,12 @@ app.get("/", function (request, response) {
     `<h2>${title}</h2>${description}
     <img src="/images/hello.jpg" style="width:100vh; display:block; margin: 5px;">
     `,
-    `<a href="/create">create</a>`
+    `<a href="/topic/create">create</a>`
   );
   response.send(html);
 });
 
-app.get("/page/:pageId", function (request, response, next) {
-  var filteredId = path.parse(request.params.pageId).base;
-  fs.readFile(`data/${filteredId}`, "utf8", function (err, description) {
-    if (err) {
-      next(err);
-      // next 안에 뭔가 오면 그것은 err를 던지는 것이다
-    } else {
-      var title = request.params.pageId;
-      var sanitizedTitle = sanitizeHtml(title);
-      var sanitizedDescription = sanitizeHtml(description, {
-        allowedTags: ["h1"],
-      });
-      var list = template.list(request.list);
-      var html = template.HTML(
-        sanitizedTitle,
-        list,
-        `<h2>${sanitizedTitle}</h2>${sanitizedDescription}`,
-        ` <a href="/create">create</a>
-            <a href="/update/${sanitizedTitle}">update</a>
-            <form action="/delete_process" method="post">
-              <input type="hidden" name="id" value="${sanitizedTitle}">
-              <input type="submit" value="delete">
-            </form>`
-      );
-      response.send(html);
-    }
-  });
-});
-
-app.get("/create", function (request, response) {
+app.get("/topic/create", function (request, response) {
   var title = "WEB - create";
   var list = template.list(request.list);
   var html = template.HTML(
@@ -98,7 +69,7 @@ app.get("/create", function (request, response) {
   response.send(html);
 });
 
-app.post("/create_process", function (request, response) {
+app.post("/topic/create_process", function (request, response) {
   var post = request.body; //bodyParser를 활용해서 코드를 간결하게 만듬
   var title = post.title;
   var title = post.title;
@@ -109,7 +80,7 @@ app.post("/create_process", function (request, response) {
   });
 });
 
-app.get("/update/:pageId", function (request, response) {
+app.get("/topic/update/:pageId", function (request, response) {
   var filteredId = path.parse(request.params.pageId).base;
   fs.readFile(`data/${filteredId}`, "utf8", function (err, description) {
     var title = request.params.pageId;
@@ -118,7 +89,7 @@ app.get("/update/:pageId", function (request, response) {
       title,
       list,
       `
-        <form action="/update_process" method="post">
+        <form action="/topic/update_process" method="post">
           <input type="hidden" name="id" value="${title}">
           <p><input type="text" name="title" placeholder="title" value="${title}"></p>
           <p>
@@ -135,7 +106,7 @@ app.get("/update/:pageId", function (request, response) {
   });
 });
 
-app.post("/update_process", function (request, response) {
+app.post("/topic/update_process", function (request, response) {
   var post = request.body; //bodyParser를 활용해서 코드를 간결하게 만듬
   var title = post.title;
   var id = post.id;
@@ -143,8 +114,37 @@ app.post("/update_process", function (request, response) {
   var description = post.description;
   fs.rename(`data/${id}`, `data/${title}`, function (error) {
     fs.writeFile(`data/${title}`, description, "utf8", function (err) {
-      response.redirect(`/?id=${title}`);
+      response.redirect(`/topic/${title}`);
     });
+  });
+});
+
+app.get("/topic/:pageId", function (request, response, next) {
+  var filteredId = path.parse(request.params.pageId).base;
+  fs.readFile(`data/${filteredId}`, "utf8", function (err, description) {
+    if (err) {
+      next(err);
+      // next 안에 뭔가 오면 그것은 err를 던지는 것이다
+    } else {
+      var title = request.params.pageId;
+      var sanitizedTitle = sanitizeHtml(title);
+      var sanitizedDescription = sanitizeHtml(description, {
+        allowedTags: ["h1"],
+      });
+      var list = template.list(request.list);
+      var html = template.HTML(
+        sanitizedTitle,
+        list,
+        `<h2>${sanitizedTitle}</h2>${sanitizedDescription}`,
+        ` <a href="/topic/create">create</a>
+            <a href="/topic/update/${sanitizedTitle}">update</a>
+            <form action="/delete_process" method="post">
+              <input type="hidden" name="id" value="${sanitizedTitle}">
+              <input type="submit" value="delete">
+            </form>`
+      );
+      response.send(html);
+    }
   });
 });
 
