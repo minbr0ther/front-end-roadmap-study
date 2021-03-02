@@ -1,0 +1,19 @@
+header {
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  color: $textColor;
+
+  // nasting 가능
+  button {
+    background-color: $primaryBtn;
+    // & 기호를 붙이면 hover나 after사용 가능
+    &::after {
+      content: "Hellooooo";
+    }
+  }
+  p {
+  }
+  .mainText {
+  }
+}

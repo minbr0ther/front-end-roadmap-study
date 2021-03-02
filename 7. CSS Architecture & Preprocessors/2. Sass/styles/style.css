@@ -1,0 +1,23 @@
+header {
+  background-color: lightblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #bd8b8b;
+}
+
+header button {
+  background-color: #3d6038;
+}
+
+header button::after {
+  content: "Hellooooo";
+}
+
+.contract button {
+  background-color: #3d6038;
+}
+/*# sourceMappingURL=style.css.map */
