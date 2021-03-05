@@ -1,6 +1,6 @@
 .home {
   height: 100%;
-  padding: 40vh;
+  padding-top: 30vh;
   overflow: hidden;
   align-items: center;
   text-align: center;
@@ -14,13 +14,17 @@
 
   &__name {
     font-size: 5rem;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
     border-bottom: 2px solid set-text-color($primary-color);
 
     &--last {
       color: $secondary-color;
       font-weight: 700;
     }
+  }
+
+  &__job {
+    padding-top: 1.5rem;
   }
 }
