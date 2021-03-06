@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -7,7 +8,7 @@
 
 .home {
   height: 100%;
-  padding-top: 30vh;
+  padding-top: 35vh;
   overflow: hidden;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -22,11 +23,11 @@
   font-size: 5rem;
   padding-top: 0.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #ffb001;
 }
 
 .home__name--last {
-  color: #ff652f;
+  color: #0098db;
   font-weight: 700;
 }
 
@@ -52,7 +53,7 @@
   top: 0.5rem;
   width: 28px;
   height: 3px;
-  background: #fff;
+  background: #ffb001;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
@@ -63,7 +64,7 @@
   top: -8px;
   width: 28px;
   height: 3px;
-  background: #fff;
+  background: #ffb001;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
@@ -74,7 +75,7 @@
   top: 8px;
   width: 20px;
   height: 3px;
-  background: #fff;
+  background: #ffb001;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
@@ -101,7 +102,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  opacity: 0.98;
+  opacity: 0.95;
   visibility: hidden;
 }
 
@@ -125,7 +126,7 @@
           justify-content: center;
   height: 100vh;
   overflow: hidden;
-  background: #272727;
+  background: #6b9e19;
   list-style-type: none;
   padding-right: 1rem;
   -webkit-transform: translateY(-100%);
@@ -152,7 +153,8 @@
 }
 
 .nav .menu-nav__item.active > a {
-  color: #ff652f;
+  font-size: 3rem;
+  color: #af0a15;
 }
 
 .nav .menu-nav__link {
@@ -166,7 +168,7 @@
 }
 
 .nav .menu-nav__link:hover {
-  color: #ff652f;
+  color: #af0a15;
 }
 
 .menu-nav__item:nth-child(1) {
@@ -196,8 +198,8 @@
 .about__bio-image {
   height: 50vh;
   width: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(39, 39, 39, 0.9)), to(rgba(39, 39, 39, 0.3))), url("../img/model-1.jpg") center top;
-  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/model-1.jpg") center top;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(107, 158, 25, 0.9)), to(rgba(107, 158, 25, 0.3))), url("../img/model-1.jpg") center top;
+  background: linear-gradient(to right, rgba(107, 158, 25, 0.9), rgba(107, 158, 25, 0.3)), url("../img/model-1.jpg") center top;
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -238,9 +240,9 @@
 }
 
 .about .jobs__job {
-  background: #343434;
+  background: #7ab41c;
   padding: 0.5rem;
-  border-bottom: 4px solid #ff652f;
+  border-bottom: 4px solid #0098db;
 }
 
 .about .jobs__job h2,
@@ -274,8 +276,8 @@
 .projects__bio-image {
   height: 30vh;
   width: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(39, 39, 39, 0.9)), to(rgba(39, 39, 39, 0.3))), url("../img/model-1.jpg") center top;
-  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/model-1.jpg") center top;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(107, 158, 25, 0.9)), to(rgba(107, 158, 25, 0.3))), url("../img/model-1.jpg") center top;
+  background: linear-gradient(to right, rgba(107, 158, 25, 0.9), rgba(107, 158, 25, 0.3)), url("../img/model-1.jpg") center top;
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -309,7 +311,7 @@
 
 .projects__item {
   position: relative;
-  border-bottom: 5px solid #ff652f;
+  border-bottom: 5px solid #0098db;
   overflow: hidden;
   cursor: pointer;
 }
@@ -325,7 +327,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #ff652f;
+  background-color: #0098db;
   opacity: 0;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -358,13 +360,13 @@
 
 .projects__btn {
   opacity: 0;
-  color: #000;
+  color: #ffb001;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
 .projects__btn:hover {
-  color: #fff;
+  color: #ffb001;
 }
 
 .projects .social-icons {
@@ -396,8 +398,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(39, 39, 39, 0.9)), to(rgba(39, 39, 39, 0.3))), url("../img/model-1.jpg") center top;
-  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/model-1.jpg") center top;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(107, 158, 25, 0.9)), to(rgba(107, 158, 25, 0.3))), url("../img/model-1.jpg") center top;
+  background: linear-gradient(to right, rgba(107, 158, 25, 0.9), rgba(107, 158, 25, 0.3)), url("../img/model-1.jpg") center top;
   background-size: cover;
 }
 
@@ -420,11 +422,71 @@
   margin-top: 2rem;
 }
 
+@media screen and (min-width: 768px) {
+  .menu-btn {
+    visibility: hidden;
+  }
+  .nav {
+    visibility: visible;
+  }
+  .nav .menu-nav {
+    display: block;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    height: 100%;
+    background: transparent;
+    text-align: right;
+  }
+  .nav .menu-nav__item {
+    display: inline;
+    padding-right: 1.5rem;
+  }
+  .nav .menu-nav__link {
+    font-size: 1.5rem;
+  }
+  .about__bio {
+    font-size: 1.5rem;
+  }
+  .projects__bio-image {
+    height: 40vh;
+  }
+  .projects__items {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .projects .text-secondary {
+    font-size: 3rem;
+  }
+  .contact__list {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    margin-left: 20vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .projects__items {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+  .contact__list {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    margin: 0 20vw;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .projects__bio-image {
+    height: 50vh;
+  }
+}
+
 body {
-  background: #272727;
-  color: #fff;
+  background: #6b9e19;
+  color: #ffb001;
   height: 100vh;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Acme", sans-serif;
   line-height: 1;
 }
 
@@ -435,12 +497,12 @@ h3 {
 }
 
 a {
-  color: #fff;
+  color: #ffb001;
   text-decoration: none;
 }
 
 .text-secondary {
-  color: #ff652f;
+  color: #0098db;
 }
 
 header {
@@ -462,22 +524,23 @@ main .social-icons {
 }
 
 main .social-icons a {
+  color: #0098db;
   padding: 0.4rem;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
 main .social-icons a:hover {
-  color: #ff652f;
+  color: #0098db;
 }
 
 footer {
-  font-size: 1rem;
+  font-size: 1.5rem;
   position: fixed;
   bottom: 0.4rem;
   right: 1rem;
   text-align: right;
   padding: 1rem;
-  color: #fff;
+  color: #ffb001;
 }
 /*# sourceMappingURL=main.css.map */

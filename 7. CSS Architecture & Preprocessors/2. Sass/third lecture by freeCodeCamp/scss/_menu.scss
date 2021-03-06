@@ -18,7 +18,7 @@
     @include transition-ease;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: -8px;
       width: 28px;
@@ -28,7 +28,7 @@
     }
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 8px;
       width: 20px;
@@ -87,7 +87,7 @@
       @include transition-ease;
 
       &.open {
-        transform: translateX(0);
+       transform: translateX(0); 
       }
 
       &.active > a {
