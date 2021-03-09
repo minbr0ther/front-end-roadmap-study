@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+$primary-color: #eee;
+$secondary-color: #16162d;
+$first-gradient-color: #ffe838;
+$second-gradient-color: #fd57bf;
+
+@mixin font-kaushan {
+  font-family: "Kaushan Script", cursive;
+}
+
+@mixin transition-cubic {
+  transition: all 700ms cubic-bezier(1, 0, 0, 1);
+}
+
+@mixin transition-ease {
+  transition: transform 650ms ease-out;
+}
