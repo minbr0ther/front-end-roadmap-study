@@ -20,6 +20,10 @@ body {
   background-size: cover;
 }
 
+section {
+  padding: 4rem 0;
+}
+
 a {
   text-decoration: none;
   color: $primary-color;
@@ -47,21 +51,22 @@ img {
 .section-heading {
   text-align: center;
   margin-top: 10rem;
+  margin-bottom: 5rem;
 
   & h1 {
     font-size: 3.5rem;
-    opacity: 0.3;
+    opacity: 0.5;
     text-transform: uppercase;
     font-weight: 300;
     position: relative;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   & h1::before,
   & h1::after {
     content: "";
     position: absolute;
-    bottom: -0.5rem;
+    bottom: -0.8rem;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba($color: #fff, $alpha: 0.75);
@@ -77,13 +82,17 @@ img {
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 100%;
-    bottom: -1rem;
+    bottom: -1.4rem;
   }
 
   & h6 {
     font-size: 1.6rem;
     font-weight: 300;
   }
+}
+
+.has-margin-right {
+  margin-right: 5rem;
 }
 /*End reusable*/
 
@@ -290,22 +299,227 @@ li {
   grid-gap: 2.5rem;
   text-align: center;
 }
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  & h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 2rem -2px 2rem 0;
+  }
+}
+
+.icon-container {
+  width: 10rem;
+  height: 10rem;
+  border: 3px solid $first-gradient-color;
+  background-color: $second-gradient-color;
+  margin-bottom: 2rem;
+  display: flex;
+  transform: rotate(45deg);
+
+  & i {
+    color: $first-gradient-color;
+    font-size: 5rem;
+    margin: auto;
+    transform: rotate(-45deg);
+  }
+}
 /*End services*/
 
 /*Start portfolio*/
+.portfolio-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.portfolio-img {
+  flex: 1;
+}
+
+.portfolio-description {
+  flex: 1;
+
+  & h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 1rem 0;
+  }
+
+  & h6 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    opacity: 0.3;
+  }
+
+  & .cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #3883ff;
+    opacity: 0.8;
+    transition: color 650ms;
+  }
+
+  & .cta:hover {
+    color: #2f67cd;
+  }
+}
 /*End services*/
 
 /*Start timeline*/
+.timeline {
+  & ul {
+    border-left: 4px solid $first-gradient-color;
+    border-radius: 0.8rem;
+    background-color: rgba($color: #000, $alpha: 0.05);
+    margin: 0 auto;
+    position: relative;
+    padding: 3.5rem;
+    list-style: none;
+    text-align: left;
+    width: 70%;
+  }
+
+  & h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+  }
+
+  & .date {
+    border-bottom: 1px solid rgba($color: #fff, $alpha: 0.1);
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+  }
+
+  & .date:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+  }
+
+  & .date::before,
+  & .date::after {
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  & .date::before {
+    content: attr(data-date);
+    left: -17.6rem;
+    text-align: center;
+    min-width: 12rem;
+    font-size: 1.3rem;
+  }
+
+  & .date::after {
+    content: "";
+    box-shadow: 0 0 0 4px $second-gradient-color;
+    border-radius: 100%;
+    left: -6.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #313534;
+  }
+}
 /*End timeline*/
 
 /*Start contact*/
+.contact {
+  background-color: #221e3f;
+}
+
+form {
+  width: 37%;
+  margin: 0 auto;
+
+  label {
+    font-size: 1.5rem;
+  }
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 10px;
+  border: none;
+  outline-color: $second-gradient-color;
+}
+
+.submit {
+  margin-top: 2px;
+  text-align: center;
+}
+
+input[type="submit"] {
+  width: initial;
+  background-color: $second-gradient-color;
+  color: $primary-color;
+  padding: 1rem 2rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: background-color 650ms;
+
+  &:hover {
+    color: #221e3f;
+    background-color: $first-gradient-color;
+  }
+}
 /*End contact*/
 
 /*Start footer*/
+.copyright {
+  margin-top: 6rem;
+  width: 100%;
+  text-align: center;
+  background-color: $secondary-color;
+  padding: 2rem 0;
+  position: relative;
+
+  & p {
+    font-size: 1.4rem;
+  }
+}
+
+.up {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  background-color: $primary-color;
+  top: -2.5rem;
+  right: 5rem;
+  border-radius: 100%;
+  display: flex;
+  animation: pulse 1.8s infinite;
+  cursor: pointer;
+
+  & i {
+    color: $secondary-color;
+    font-size: 2rem;
+    margin: auto;
+  }
+}
 /*End footer*/
 
-/*Start animations*/
-/*End animations*/
-
-/*Start media queries*/
-/*End media queries*/
+@import "responsive";

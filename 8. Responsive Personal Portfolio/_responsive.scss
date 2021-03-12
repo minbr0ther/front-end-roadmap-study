@@ -1,0 +1,130 @@
+/*Start media queries*/
+@media screen and (max-width: 768px) {
+  body {
+    background: url("../images/sitebg2.jpg") no-repeat center fixed;
+    background-size: cover;
+  }
+
+  .landing-text {
+    h1 {
+      font-size: 11rem;
+      height: 26vh;
+    }
+
+    h6 {
+      font-size: 2rem;
+    }
+  }
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  li {
+    margin: 2rem 0;
+  }
+
+  .nav-link {
+    font-size: 4.5rem;
+  }
+
+  .about-heading {
+    h1 {
+      font-size: 8rem;
+    }
+  }
+
+  .section-heading {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  .about-details {
+    .nav-list {
+      flex-direction: initial;
+    }
+    li {
+      margin: 0 2rem;
+    }
+  }
+
+  .icon-container i {
+    font-size: 4rem;
+  }
+
+  .timeline {
+    ul {
+      margin: 0 0 0 10rem;
+    }
+
+    .date::before {
+      left: -16rem;
+    }
+
+    .date::after {
+      left: -4.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menu-toggler {
+    top: 2rem;
+    right: 2rem;
+  }
+
+  .landing-text {
+    h1 {
+      font-size: 6rem;
+    }
+
+    h6 {
+      font-size: 2rem;
+    }
+  }
+
+  .nav-link {
+    font-size: 4rem;
+    margin-bottom: 2px;
+  }
+
+  .about {
+    .container {
+      flex-direction: column;
+    }
+  }
+
+  .profile-img {
+    margin: 0 0 7rem 0;
+  }
+
+  .portfolio-item {
+    flex-direction: column;
+  }
+
+  .portfolio-img {
+    margin: 0 0 2rem 0;
+    order: 1;
+  }
+
+  .portfolio-description {
+    margin: 0;
+    order: 2;
+  }
+
+  .timeline {
+    p {
+      font-size: 1.6rem;
+    }
+
+    .date::before {
+      font-size: 1.4rem;
+    }
+  }
+
+  form {
+    width: 80%;
+  }
+}
+/*End media queries*/

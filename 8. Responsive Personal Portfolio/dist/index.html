@@ -15,7 +15,7 @@
   </head>
   <body>
     <header>
-      <div class="menu-toggler">
+      <div class="menu-toggler" data-aos="fade-in" data-aos-delay="300">
         <div class="bar half start"></div>
         <div class="bar"></div>
         <div class="bar half end"></div>
@@ -33,17 +33,19 @@
       </nav>
 
       <div class="landing-text">
-        <h1>Minhyung Jeong</h1>
-        <h6>UI | UX Designer and Web Developer</h6>
+        <h1 data-aos="fade-in" data-aos-delay="600">Minhyung Jeong</h1>
+        <h6 data-aos="fade-in" data-aos-delay="900">
+          UI | UX Designer and Web Developer
+        </h6>
       </div>
     </header>
 
     <section class="about" id="about">
       <div class="container">
-        <div class="profile-img">
+        <div class="profile-img" data-aos="fade-right" data-aos-delay="150">
           <img src="images/profile.jpeg" alt="" />
         </div>
-        <div class="about-details">
+        <div class="about-details" data-aos="fade-left" data-aos-delay="300">
           <div class="about-heading">
             <h1>About</h1>
             <h6>Myself</h6>
@@ -85,7 +87,7 @@
           <h6>What I can do for you</h6>
         </div>
         <div class="my-skills">
-          <div class="skill">
+          <div class="skill" data-aos="fade-in" data-aos-delay="150">
             <div class="icon-container">
               <i class="fas fa-layer-group"></i>
             </div>
@@ -97,9 +99,9 @@
               fugiat, explicabo dignissimos ad harum quam
             </p>
           </div>
-          <div class="skill">
+          <div class="skill" data-aos="fade-in" data-aos-delay="300">
             <div class="icon-container">
-              <i class="fas fa-code-group"></i>
+              <i class="fas fa-code"></i>
             </div>
             <h1>Web Development</h1>
             <p>
@@ -109,9 +111,9 @@
               fugiat, explicabo dignissimos ad harum quam
             </p>
           </div>
-          <div class="skill">
+          <div class="skill" data-aos="fade-in" data-aos-delay="450">
             <div class="icon-container">
-              <i class="fas fa-chart-group"></i>
+              <i class="fas fa-chart-bar"></i>
             </div>
             <h1>Product Strategy</h1>
             <p>
@@ -132,10 +134,18 @@
           <h6>View some of my recent work</h6>
         </div>
         <div class="portfolio-item">
-          <div class="portfolio-img">
+          <div
+            class="portfolio-img has-margin-right"
+            data-aos="fade-right"
+            data-aos-delay="150"
+          >
             <img src="images/portitem1.jpeg" alt="" />
           </div>
-          <div class="portfolio-description">
+          <div
+            class="portfolio-description"
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
             <h6>Web Development</h6>
             <h1>Blog Website</h1>
             <p>
@@ -145,8 +155,12 @@
             <a href="#" class="cta">View Details</a>
           </div>
         </div>
-        <div class="portfolio-item">
-          <div class="portfolio-description">
+        <div class="portfolio-item" data-aos="fade-right" data-aos-delay="300">
+          <div
+            class="portfolio-description has-margin-right"
+            data-aos="fade-left"
+            data-aos-delay="450"
+          >
             <h6>Web Design</h6>
             <h1>Product Layout</h1>
             <p>
@@ -155,15 +169,23 @@
             </p>
             <a href="#" class="cta">View Details</a>
           </div>
-          <div class="portfolio-img">
+          <div class="portfolio-img" data-aos="fade-right" data-aos-delay="600">
             <img src="images/portitem2.jpeg" alt="" />
           </div>
         </div>
         <div class="portfolio-item">
-          <div class="portfolio-img">
+          <div
+            class="portfolio-img has-margin-right"
+            data-aos="fade-right"
+            data-aos-delay="750"
+          >
             <img src="images/portitem3.jpeg" alt="" />
           </div>
-          <div class="portfolio-description">
+          <div
+            class="portfolio-description"
+            data-aos="fade-left"
+            data-aos-delay="450"
+          >
             <h6>Web Design</h6>
             <h1>Product Sketch</h1>
             <p>
@@ -182,7 +204,7 @@
           <h1>Work Experience</h1>
           <h6>Past and cureent jobs</h6>
         </div>
-        <div class="timeline">
+        <div class="timeline" data-aos="fade-down" data-aos-delay="150">
           <ul>
             <li class="date" data-date="2018 - Present">
               <h1>Google</h1>
@@ -211,12 +233,12 @@
     </section>
 
     <section class="contact" id="contact">
-      <div cla<ss="container">
+      <div class="container">
         <div class="section-heading">
           <h1>Contact</h1>
           <h6>Let's work together</h6>
         </div>
-        <form action="">
+        <form action="" data-aos="fade-up" data-aos-delay="150">
           <label for="name">Name:</label>
           <input
             type="text"
@@ -241,7 +263,9 @@
           </select>
           <label for="Subject">Subject:</label>
           <textarea name="subject" id="subject" cols="10" rows="10"></textarea>
-          <input type="submit" />
+          <div class="submit">
+            <input type="submit" />
+          </div>
         </form>
       </div>
     </section>
@@ -249,8 +273,8 @@
     <footer class="copyright">
       <div class="up" id="up">
         <i class="fas fa-chevron-up"></i>
-        <p>&copy; 2021 Minhyung Jeong</p>
       </div>
+      <p>&copy; 2021 Minhyung Jeong</p>
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
