@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-weight: normal;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow: hidden;
+}
+
+body {
+  overflow: hidden;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: -webkit-gradient(linear, left top, left bottom, from(deeppink), to(purple));
+  background: linear-gradient(deeppink, purple);
+  padding: 5.5rem;
+}
+
+header {
+  width: 35rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(0.4rem);
+          backdrop-filter: blur(0.4rem);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+header .user {
+  padding-top: 2rem;
+}
+
+header .user img {
+  margin: 1rem 0;
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-shadow: 0 0 0 1rem rgba(255, 255, 255, 0.2);
+          box-shadow: 0 0 0 1rem rgba(255, 255, 255, 0.2);
+}
+
+header .user .name {
+  font-size: 3rem;
+  color: #fff;
+  padding: 0.5rem 0;
+}
+
+header .user .post {
+  font-size: 1.8rem;
+  color: #eee;
+  font-weight: lighter;
+}
+
+header .navbar {
+  padding: 1rem 3rem;
+}
+
+header .navbar ul li {
+  margin: 1rem 0;
+  list-style: none;
+}
+
+header .navbar ul li a {
+  display: block;
+  padding: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+}
+
+header .navbar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-transition: none;
+  transition: none;
+}
+
+.container {
+  height: 58rem;
+  width: 80rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(0.4rem);
+          backdrop-filter: blur(0.4rem);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+/*# sourceMappingURL=main.css.map */

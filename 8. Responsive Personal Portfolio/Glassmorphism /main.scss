@@ -1,0 +1,98 @@
+@import "config";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-weight: normal;
+  transition: all 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow: hidden;
+}
+
+body {
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: linear-gradient($primary-color, $secondary-color);
+  padding: 5.5rem;
+}
+
+header {
+  width: 35rem;
+  background-color: $gray-transparent-color;
+  box-shadow: 0 1rem 2rem $black-transparent-color;
+  backdrop-filter: blur(0.4rem); //배경 블러처리
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  .user {
+    padding-top: 2rem;
+
+    img {
+      margin: 1rem 0;
+      height: 15rem;
+      width: 15rem;
+      border-radius: 50%;
+      object-fit: cover; //요소를 어떤방식으로 맞출 것인지 (fill, contian, cover)
+      box-shadow: 0 0 0 1rem rgba(255, 255, 255, 0.2);
+    }
+
+    .name {
+      font-size: 3rem;
+      color: #fff;
+      padding: 0.5rem 0;
+    }
+
+    .post {
+      font-size: 1.8rem;
+      color: #eee;
+      font-weight: lighter;
+    }
+  }
+
+  .navbar {
+    padding: 1rem 3rem;
+
+    ul li {
+      margin: 1rem 0;
+      list-style: none;
+
+      a {
+        display: block;
+        padding: 1rem;
+        font-size: 2rem;
+        color: #fff;
+        background-color: $gray-transparent-color;
+        box-shadow: 0 1rem 2rem $black-transparent-color;
+        border-radius: 1rem;
+      }
+
+      a:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+        transition: none;
+      }
+    }
+  }
+}
+
+.container {
+  height: 58rem;
+  width: 80rem;
+  background-color: $gray-transparent-color;
+  box-shadow: 0 1rem 2rem $black-transparent-color;
+  backdrop-filter: blur(0.4rem); //배경 블러처리
+  border-radius: 1rem;
+  overflow: hidden;
+}
