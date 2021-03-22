@@ -5,12 +5,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-transform: capitalize;
+  text-transform: capitalize; //단어의 첫번째 글짜를 대문자로 표기
   outline: none;
   border: none;
   text-decoration: none;
   font-weight: normal;
-  transition: all 0.2s linear;
 }
 
 html {
@@ -26,6 +25,33 @@ body {
   justify-content: space-between;
   background: linear-gradient($primary-color, $secondary-color);
   padding: 5.5rem;
+}
+
+section {
+  padding: 1rem 7%;
+}
+
+.btn {
+  font-size: 2rem;
+  padding: 0.7rem 4rem;
+  background: $gray-transparent-color;
+  color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem $black-transparent-color;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 0.2s linear;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+.heading {
+  font-size: 3rem;
+  text-align: center;
+  padding: 1rem;
+  color: #fff;
 }
 
 header {
@@ -77,11 +103,12 @@ header {
         background-color: $gray-transparent-color;
         box-shadow: 0 1rem 2rem $black-transparent-color;
         border-radius: 1rem;
-      }
+        transition: all 0.2s linear;
 
-      a:hover {
-        background-color: rgba(255, 255, 255, 0.4);
-        transition: none;
+        &:hover {
+          background-color: $hover-color;
+          transition: none;
+        }
       }
     }
   }
@@ -95,4 +122,160 @@ header {
   backdrop-filter: blur(0.4rem); //배경 블러처리
   border-radius: 1rem;
   overflow: hidden;
+
+  .home {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    position: relative;
+    padding-bottom: 10rem;
+
+    h3 {
+      font-size: 2.5rem;
+      font-weight: lighter;
+      color: #eee;
+      margin-bottom: 1rem;
+    }
+
+    .name span {
+      font-size: 4rem;
+      color: #fff;
+    }
+
+    .post span {
+      font-size: 3rem;
+      color: #fff;
+    }
+
+    .share {
+      position: absolute;
+      left: 50%;
+      bottom: 5rem;
+      transform: translateX(-50%);
+      display: flex;
+      padding: 1rem;
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+      transition: 0.2s linear;
+
+      a {
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+        padding: 1rem 2rem;
+        margin: 1rem;
+        color: #fff;
+        font-size: 2rem;
+        border-radius: 1rem;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+  }
+}
+
+.about {
+  min-height: 100%;
+
+  .content {
+    h3 {
+      font-size: 2.5rem;
+      color: #eee;
+
+      span {
+        color: #fff;
+      }
+    }
+    p {
+      font-size: 1.5rem;
+      color: #eee;
+      padding: 0.5rem 0;
+    }
+  }
+
+  .skills {
+    padding: 1rem 0;
+
+    .progress {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+
+      h3 {
+        display: flex;
+        justify-content: space-between;
+        font-size: 2rem;
+        color: #fff;
+      }
+
+      .bar {
+        position: relative;
+        width: 100%;
+        height: 0.3rem;
+        margin: 1rem 0;
+        background: #555;
+
+        span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background: #fff;
+        }
+      }
+
+      &:nth-child(1) .bar span {
+        width: 95%;
+      }
+      &:nth-child(2) .bar span {
+        width: 75%;
+      }
+      &:nth-child(3) .bar span {
+        width: 65%;
+      }
+      &:nth-child(4) .bar span {
+        width: 65%;
+      }
+    }
+  }
+}
+
+.service {
+  min-height: 100%;
+
+  .box-container {
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .box {
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.2);
+      text-align: center;
+      width: 32rem;
+
+      i {
+        color: #fff;
+        font-size: 4.5rem;
+        padding: 1rem 0;
+      }
+
+      p {
+        color: #fff;
+        font-size: 1.3rem;
+        padding: 0.5rem 5rem;
+      }
+    }
+  }
 }
