@@ -69,5 +69,5 @@ console.log(solution(arr));
 
 ------
 
-후기: 
+후기: 생각을 창의적으로 ?
 
