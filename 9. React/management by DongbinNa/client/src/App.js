@@ -21,34 +21,23 @@ const styles = (theme) => ({
   },
 });
 
-const customers = [
-  {
-    id: 1,
-    image: "https://placeimg.com/64/64/1",
-    name: "홍길동",
-    birthday: "951229",
-    gender: "여자",
-    job: "대학생",
-  },
-  {
-    id: 2,
-    image: "https://placeimg.com/64/64/2",
-    name: "나동빈",
-    birthday: "951229",
-    gender: "남자",
-    job: "군인",
-  },
-  {
-    id: 3,
-    image: "https://placeimg.com/64/64/3",
-    name: "정민형",
-    birthday: "951229",
-    gender: "남자",
-    job: "개발자",
-  },
-];
-
 class App extends Component {
+  state = {
+    customers: "",
+  };
+
+  componentDidMount() {
+    this.callApi()
+      .then((res) => this.setState({ customers: res }))
+      .catch((err) => console.log(err));
+  }
+
+  callApi = async () => {
+    const response = await fetch("api/customers");
+    const body = await response.json();
+    return body;
+  };
+
   render() {
     const { classes } = this.props;
     return (

@@ -63,7 +63,7 @@ console.log(solution(28, arr));
 
 for문안에 max를 넣으면 결과적으로 최댓값을 얻을 수 있다
 
-for문 안에 자기 자신의 값을 부정할 수 있다 if(j!==i)
+for문 안에 자기 자신의 값을 부정할 수 있다 if(j!==)
 
 
 
