@@ -1,6 +1,16 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
-class Habit extends Component {
+class Habit extends PureComponent {
+  componentDidMount() {
+    //component가 ui상에 등록이 되었을때
+    console.log(`habit: ${this.props.habit.name} mounted`);
+  }
+
+  componentWillUnmount() {
+    //component가 ui상에서 지워지기 전에
+    console.log(`habit: ${this.props.habit.name} will unmount`);
+  }
+
   handleIncreament = () => {
     //state 오브젝트 안에 인ㅆ는 count를 증가 한뒤 state를 업데이트 해야 함
     //this.setState({ count: this.state.count + 1 });

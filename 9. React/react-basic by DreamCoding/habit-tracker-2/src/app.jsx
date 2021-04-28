@@ -16,9 +16,19 @@ class App extends Component {
     //state 오브젝트 안에 인ㅆ는 count를 증가 한뒤 state를 업데이트 해야 함
     //this.setState({ count: this.state.count + 1 });
     //console.log(`handleIncrement ${habit}`);
-    const habits = [...this.state.habits]; //spread operator
-    const index = habits.indexOf(habit);
-    habits[index].count++;
+
+    // const habits = [...this.state.habits]; //spread operator
+    // const index = habits.indexOf(habit);
+    // habits[index].count++;
+
+    const habits = this.state.habits.map((item) => {
+      if (item.id === habit.id) {
+        //id가 같으면 count ++
+        return { ...habit, count: habit.count + 1 };
+      }
+      return item;
+    });
+
     this.setState({ habits }); //habits:habits => habits으로 생략
   };
 
@@ -28,10 +38,21 @@ class App extends Component {
     // this.setState({ count: count < 0 ? 0 : count });
     //count가 0이하면 0을 출력하고 아니면 count 출력
     //console.log(`handleDecrement ${habit}`);
-    const habits = [...this.state.habits]; //새로운 habits 선언
-    const index = habits.indexOf(habit); //새로운 habits에서 index추출
-    const count = habits[index].count - 1;
-    habits[index].count = count < 0 ? 0 : count;
+
+    // const habits = [...this.state.habits]; //새로운 habits 선언
+    // const index = habits.indexOf(habit); //새로운 habits에서 index추출
+    // const count = habits[index].count - 1;
+    // habits[index].count = count < 0 ? 0 : count;
+
+    const habits = this.state.habits.map((item) => {
+      if (item.id === habit.id) {
+        //id가 같으면 count ++
+        const count = habit.count - 1;
+        return { ...habit, count: count < 0 ? 0 : count };
+      }
+      return item;
+    });
+
     this.setState({ habits }); //새로운 habits로 업데이트 / habits:habits => habits으로 생략
   };
 
@@ -49,10 +70,13 @@ class App extends Component {
   };
 
   handleReset = () => {
-    const habits = this.state.habits.map((item) => {
-      item.count = 0;
-      return item;
+    const habits = this.state.habits.map((habit) => {
+      if (habit.count !== 0) {
+        return { ...habit, count: 0 };
+      }
+      return habit;
     });
+
     this.setState({ habits });
   };
 

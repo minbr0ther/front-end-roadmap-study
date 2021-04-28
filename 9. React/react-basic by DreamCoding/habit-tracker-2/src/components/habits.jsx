@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import Habit from "./habit";
 import HabitAddForm from "./habitAddForm";
 
-class Habits extends Component {
+class Habits extends PureComponent {
   //   componentDidUpdate() {
   //     //component가 업데이트 될때마다 호출됨
   //   }
