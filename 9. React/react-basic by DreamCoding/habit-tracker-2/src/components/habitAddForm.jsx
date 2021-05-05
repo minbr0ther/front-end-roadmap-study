@@ -1,8 +1,8 @@
 import React, { memo } from "react";
 
 const HabitAddForm = memo((props) => {
-  //PureComponent는 props와 state안에 들어있는 데이터가
-  //최상위에 있는 데이터가 변하지 않으면 render가 호출되지 않음
+    //memo는 함수프로그래밍에서 pureComponent와 비슷한 역할을 함
+
   const inputRef = React.createRef();
   const formRef = React.createRef();
 
