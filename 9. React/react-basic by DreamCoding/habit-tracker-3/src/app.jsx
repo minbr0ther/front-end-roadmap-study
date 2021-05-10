@@ -13,17 +13,24 @@ class App extends Component {
   };
 
   handleIncrement = (habit) => {
-    const habits = [...this.state.habits];
-    const index = habits.indexOf(habit);
-    habits[index].count++;
-    this.setState(habits);
+    const habits = this.state.habits.map((item) => {
+      if (item.id === habit.id) {
+        return { ...habit, count: habit.count + 1 };
+      }
+      return item;
+    });
+
+    this.setState({ habits });
   };
 
   handleDecrement = (habit) => {
-    const habits = [...this.state.habits]; //복사를 통해 새로운 habits 선언
-    const index = habits.indexOf(habit); //indexOf를 활용해 habit의 index 추출
-    const count = habits[index].count - 1;
-    habits[index].count = count > 0 ? count : 0;
+    const habits = this.state.habits.map((item) => {
+      if (item.id === habit.id) {
+        return { ...habit, count: habit.count - 1 > 0 ? habit.count - 1 : 0 };
+      }
+      return item;
+    });
+
     this.setState({ habits });
   };
 
@@ -42,7 +49,10 @@ class App extends Component {
 
   handleReset = () => {
     const habits = this.state.habits.map((habit) => {
-      habit.count = 0;
+      if (habit.count !== 0) {
+        habit.count = 0;
+        return habit;
+      }
       return habit;
     });
     this.setState({ habits });
