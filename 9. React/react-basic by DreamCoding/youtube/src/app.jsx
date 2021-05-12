@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./app.css";
+import styles from "./app.module.css";
+import SearchHeader from "./components/search_header/search_header";
+import VideoList from "./components/video_list/video_list";
 
 function App() {
   const [videos, setVideos] = useState([]); //변수와 업데이트 가능한 함수가 할당
@@ -21,7 +23,12 @@ function App() {
       .catch((error) => console.log("error", error));
   }, []); //[]를 비워 놓으면 마운트가 되었을 때만 이 부분이 호출됨
 
-  return <h1>Hello React</h1>;
+  return (
+    <div className={styles.app}>
+      <SearchHeader />
+      <VideoList videos={videos} />
+    </div>
+  );
 }
 
 export default App;
