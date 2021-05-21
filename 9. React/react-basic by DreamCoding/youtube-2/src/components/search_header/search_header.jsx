@@ -3,13 +3,12 @@ import styles from "./search_header.module.css";
 import React, { memo, useRef } from "react";
 
 const SearchHeader = memo(({ onSearch }) => {
-    //전달되는 props이 변경이 되지 않으면 re-render가 되지 않고
-    //
   const inputRef = useRef();
 
   const handleSearch = () => {
     const value = inputRef.current.value;
     onSearch(value);
+    //
   };
 
   const onClick = () => {
@@ -17,16 +16,14 @@ const SearchHeader = memo(({ onSearch }) => {
   };
 
   const onKeyPress = (event) => {
-    if (event.key === "Enter") {
-      handleSearch();
-    }
+    if (event.key === "Enter") handleSearch();
   };
 
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <img className={styles.img} src="/images/logo.png" alt="" />
-        <h1 className={styles.title}>Youtube</h1>
+        <img className={styles.img} src="/images/logo.png" alt="logo" />
+        <h1 className={styles.title}>YouTube</h1>
       </div>
       <input
         ref={inputRef}

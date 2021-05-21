@@ -1,11 +1,11 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styles from "./app.module.css";
 import SearchHeader from "./components/search_header/search_header";
 import VideoDetail from "./components/video_detail/video_detail";
 import VideoList from "./components/video_list/video_list";
 
 function App({ youtube }) {
-  const [videos, setVideos] = useState([]); //변수와 업데이트 가능한 함수가 할당
+  const [videos, setVideos] = useState([]); //초기값은 텅텅 비워진 상태를 만든다
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   const selectVideo = (video) => {
@@ -14,8 +14,8 @@ function App({ youtube }) {
 
   const search = useCallback(
     (query) => {
-      setSelectedVideo(null); //선택한 비디오가 없도록 설정
-
+      setSelectedVideo(null);
+      //로딩 스피너
       youtube
         .search(query) //
         .then((videos) => {
@@ -23,13 +23,14 @@ function App({ youtube }) {
         });
     },
     [youtube]
-  );
+  ); //useCallback과 함께 텅텅 빈 []을 사용하면 필요한 경우에만 리렌더가 되게 함
+  //단점으로 메모리에 계속 쌓여서 정말 필요할때만 쓰는게 좋음
 
   useEffect(() => {
     youtube
       .mostPopular() //
       .then((videos) => setVideos(videos));
-  }, [youtube]); //[]를 비워 놓으면 마운트가 되었을 때만 이 부분이 호출됨
+  }, [youtube]); //[exampe]을 주면 계속 업데이트 하지 않고 example이 마운트 or 업데이트 됐을때 호출한다 !!
 
   return (
     <div className={styles.app}>
@@ -37,7 +38,7 @@ function App({ youtube }) {
       <section className={styles.content}>
         {selectedVideo && (
           <div className={styles.detail}>
-            <VideoDetail video={selectedVideo} />
+            <VideoDetail video={selectedVideo} />{" "}
           </div>
         )}
         <div className={styles.list}>

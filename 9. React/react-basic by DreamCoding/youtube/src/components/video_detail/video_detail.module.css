@@ -1,0 +1,8 @@
+.detail {
+  padding: 0.2em;
+}
+
+/* pre태그 줄 넘김 허용 */
+.description {
+  white-space: pre-wrap;
+}

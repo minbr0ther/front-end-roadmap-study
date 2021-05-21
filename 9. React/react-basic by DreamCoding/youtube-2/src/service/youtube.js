@@ -1,3 +1,5 @@
+import axios from "axios";
+
 class Youtube {
   constructor(httpClient) {
     this.youtube = httpClient;
@@ -12,6 +14,12 @@ class Youtube {
       },
     });
     return response.data.items;
+    // const response = await fetch(
+    //   `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=${this.key}`,
+    //   this.getRequestOptions
+    // );
+    // const result = await response.json();
+    // return result.items; //받아온 json에서 items를 추출해서 result에 저장
   }
 
   async search(query) {
@@ -27,6 +35,11 @@ class Youtube {
       ...item,
       id: item.id.videoId,
     }));
+    // const response = await fetch(
+    //   `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResult=25&q=${query}&type=video&key=${this.key}`,
+    //   this.getRequestOptions
+    // );
+    // const result = await response.json();
   }
 }
 
