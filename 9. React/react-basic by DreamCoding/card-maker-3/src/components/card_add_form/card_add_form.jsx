@@ -1,9 +1,8 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Button from "../button/button";
-import ImageFileInput from "../image_file_input/image_file_input";
 import styles from "./card_add_form.module.css";
 
-const CardAddForm = () => {
+const CardAddForm = ({ FileInput, onAdd }) => {
   const formRef = useRef();
   const nameRef = useRef();
   const companyRef = useRef();
@@ -11,6 +10,14 @@ const CardAddForm = () => {
   const titleRef = useRef();
   const emailRef = useRef();
   const messageRef = useRef();
+  const [file, setFile] = useState({ fileName: null, fileURL: null });
+
+  const onFileChange = (file) => {
+    setFile({
+      fileName: file.name,
+      fileURL: file.url,
+    });
+  };
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -18,7 +25,7 @@ const CardAddForm = () => {
       id: Date.now(),
       name: nameRef.current.value || "",
       company: companyRef.current.value || "",
-      theme: themeRef.current.value || "",
+      theme: themeRef.current.value,
       title: titleRef.current.value || "",
       email: emailRef.current.value || "",
       message: messageRef.current.value || "",
@@ -26,7 +33,7 @@ const CardAddForm = () => {
       fileURL: "",
     };
     formRef.current.reset();
-    onSubmit(card);
+    onAdd(card);
   };
 
   return (
@@ -51,9 +58,9 @@ const CardAddForm = () => {
         name="theme"
         placeholder="Theme"
       >
-        <option placeholder="light">Light</option>
-        <option placeholder="dark">Dark</option>
-        <option placeholder="colorful">Colorful</option>
+        <option placeholder="light">light</option>
+        <option placeholder="dark">dark</option>
+        <option placeholder="colorful">colorful</option>
       </select>
       <input
         ref={titleRef}
@@ -76,7 +83,7 @@ const CardAddForm = () => {
         placeholder="Message"
       />
       <div className={styles.fileInput}>
-        <ImageFileInput />
+        <FileInput onFileChange={onFileChange} />
         <Button name="Add" onClick={onSubmit} />
       </div>
     </form>
