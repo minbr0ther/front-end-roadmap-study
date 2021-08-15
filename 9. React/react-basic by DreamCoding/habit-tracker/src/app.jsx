@@ -1,49 +1,108 @@
-import React, { Component } from "react";
 import "./app.css";
-import Habits from "./components/habits";
-import Navbar from "./components/navbar";
+import React, { Component } from "react";
+import Habits from "./components/Habits";
+import Navbar from "./components/Navbar";
+import GreenBtn from "./components/GreenBtn";
 
 class App extends Component {
   state = {
     habits: [
-      { id: 1, name: "Reading", count: 0 },
-      { id: 2, name: "Running", count: 0 },
-      { id: 3, name: "Coding", count: 0 },
+      { id: 0, name: "Reading", count: 3 },
+      { id: 1, name: "Running", count: 2 },
+      { id: 2, name: "Coding", count: 0 },
     ],
+    text: "",
   };
 
   handleIncrement = (habit) => {
-    const habits = [...this.state.habits]; //habits 라는 배열로 복사
-    const index = habits.indexOf(habit);
-    habits[index].count++;
-    this.setState({ habits }); //새로 정의한 habits로 업데이트
+    // const habits = [...this.state.habits];
+    // const index = habits.indexOf(habit);
+    // habits[index].count++;
+    // this.setState({ habits });
+
+    const habits = this.state.habits.map((item) => {
+      if (item.id === habit.id) {
+        return { ...habit, count: habit.count + 1 };
+      }
+      return item;
+    });
+    this.setState({ habits });
   };
 
   handleDecrement = (habit) => {
-    const habits = [...this.state.habits]; //habits 라는 배열로 복사
-    const index = habits.indexOf(habit);
-    const count = habits[index].count - 1;
-    habits[index].count = count < 0 ? 0 : count; //count가 0미만으로 안가게
+    // const habits = [...this.state.habits];
+    // const index = habits.indexOf(habit);
+    // if (habits[index].count > 0) {
+    //   habits[index].count--;
+    // } else {
+    //   habits[index].count = 0;
+    // }
+    // this.setState({ habits });
+
+    const habits = this.state.habits.map((item) => {
+      if (item.id === habit.id) {
+        const count = habit.count - 1;
+        return { ...habit, count: count > 0 ? count : 0 };
+      }
+      return item;
+    });
     this.setState({ habits });
   };
 
   handleDelete = (habit) => {
-    const habits = this.state.habits.filter((item) => item.id !== habit.id);
-    //현재의 선택된 id가 다른 애들만 살린다 (즉 현상태의 것은 걸러져서 삭제된 것 처럼 보임)
+    let habits = [...this.state.habits];
+    const index = habits.indexOf(habit);
+    habits.splice(index, 1);
+    this.setState({ habits });
+    //const habits = habits.filter(item => item.id!==habit.id)
+  };
+
+  onSubmit = (event) => {
+    event.preventDefault();
+    let habits = [
+      ...this.state.habits,
+      {
+        id: Date.now(),
+        name: this.state.text,
+        count: 0,
+      },
+    ];
+    this.setState({
+      habits,
+    });
+  };
+
+  handleChange = (event) => {
+    this.setState({
+      text: event.target.value,
+    });
+  };
+
+  onClick = (event) => {
+    let habits = [...this.state.habits];
+    habits.map((habit) => (habit.count = 0));
     this.setState({ habits });
   };
 
   render() {
     return (
       <>
-        <Navbar
-          totalCount={this.state.habits.filter((item) => item.count > 0).length}
-        />
+        <Navbar habits={this.state.habits} />
+        <form ref={this.formRef} className="m-3" onSubmit={this.onSubmit}>
+          <input
+            className="border-2 border-grey h-10 w-auto text-3xl"
+            onChange={this.handleChange}
+            type="text"
+            placeholder="Habit"
+          />
+          <GreenBtn>Add</GreenBtn>
+        </form>
+        <GreenBtn onClick={this.onClick}>Reset All</GreenBtn>
         <Habits
-          habits={this.state.habits}
           onIncrement={this.handleIncrement}
           onDecrement={this.handleDecrement}
           onDelete={this.handleDelete}
+          habits={this.state.habits}
         />
       </>
     );

@@ -1,6 +1,6 @@
-* {
-  box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 button {
   outline: none;
@@ -8,49 +8,22 @@ button {
   cursor: pointer;
 }
 
-.navbar {
+ul {
+  padding: 0;
+}
+
+.habit-count {
   font-size: 2rem;
-  padding: 1em;
-  background-color: blanchedalmond;
-}
-
-.navbar-logo {
-  color: green;
-  margin-right: 0.5em;
-}
-
-.navbar-count {
+  color: white;
+  background-color: darkseagreen;
+  width: 1.5em;
+  border-radius: 50%;
+  padding: 0.1em 0.2em;
+  line-height: 1.25em;
   display: inline-block;
   text-align: center;
-  font-size: 2rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  line-height: 2.5rem;
   margin-left: 0.2em;
-  background-color: green;
-  color: white;
-  border-radius: 50%;
-}
-
-.habits {
-  padding: 0.5em;
-  padding-top: 2em;
-}
-
-.add-input {
-  font-size: 2rem;
-}
-
-.add-input {
-  margin-right: 0.2em;
-}
-
-.add-button {
-  height: 100%;
-  font-size: 1.5rem;
-  padding: 0.3em 0.5em;
-  background-color: green;
-  color: white;
+  margin-right: 0.5em;
 }
 
 .habit {
@@ -59,28 +32,10 @@ button {
   list-style: none;
 }
 
-.habit-count {
-  display: inline-block;
-  text-align: center;
-  font-size: 2rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  line-height: 2.5rem;
-  margin-left: 0.2em;
-  margin-right: 0.5em;
-  background-color: darkseagreen;
-  color: white;
-  border-radius: 50%;
-}
-
 .habit-button {
   font-size: 2.5rem;
   margin: 0 0.1em;
   background-color: transparent;
-}
-
-.habit-button:hover {
-  opacity: 0.8;
 }
 
 .habit-increase,
@@ -93,9 +48,16 @@ button {
   color: darkred;
 }
 
-.habits-reset {
-  font-size: 1.5rem;
-  padding: 0.2em 1em;
-  background-color: green;
-  color: white;
+nav {
+  height: 2em;
+  font-size: 2.3em;
+  background-color: beige;
+  display: flex;
+  align-items: center;
+  padding-left: 0.5em;
+}
+
+.navbar-logo {
+  font-size: 2rem;
+  color: darkgreen;
 }

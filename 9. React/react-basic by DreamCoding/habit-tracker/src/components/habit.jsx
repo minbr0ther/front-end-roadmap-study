@@ -1,20 +1,21 @@
 import React, { Component } from "react";
 
 class Habit extends Component {
-  handleIncrement = () => {
+  handleIncrement = (event) => {
     this.props.onIncrement(this.props.habit);
   };
 
-  handleDecrement = () => {
+  handleDecrement = (event) => {
     this.props.onDecrement(this.props.habit);
   };
 
-  handleDelete = () => {
+  handleDelete = (event) => {
     this.props.onDelete(this.props.habit);
   };
 
   render() {
     const { name, count } = this.props.habit;
+
     return (
       <li className="habit">
         <span className="habit-name">{name}</span>

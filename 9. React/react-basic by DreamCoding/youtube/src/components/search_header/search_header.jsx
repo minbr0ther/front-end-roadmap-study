@@ -1,49 +1,41 @@
-import styles from "./search_header.module.css";
+import React, { useRef } from "react";
 
-import React, { memo, useRef } from "react";
-
-const SearchHeader = memo(({ onSearch }) => {
-    //전달되는 props이 변경이 되지 않으면 re-render가 되지 않고
-    //
+const SearchHeader = ({ onSearch }) => {
   const inputRef = useRef();
-
   const handleSearch = () => {
     const value = inputRef.current.value;
     onSearch(value);
   };
-
   const onClick = () => {
     handleSearch();
   };
 
   const onKeyPress = (event) => {
-    if (event.key === "Enter") {
-      handleSearch();
-    }
+    if (event.key === "Enter") handleSearch();
   };
 
   return (
-    <header className={styles.header}>
-      <div className={styles.logo}>
-        <img className={styles.img} src="/images/logo.png" alt="" />
-        <h1 className={styles.title}>Youtube</h1>
+    <header className="flex h-16 px-4 py-4 bg-black text-white">
+      <div className="flex items-center mr-4">
+        <img className="" src="/images/logo.png" alt="logo" />
+        <h1 className="text-4xl font-bold">Youtube</h1>
       </div>
       <input
         ref={inputRef}
-        className={styles.input}
+        className="flex-grow text-lg text-black outline-none"
         type="search"
-        placeholder="search..."
+        placeholder="Search..."
         onKeyPress={onKeyPress}
       />
-      <button className={styles.button} type="submit" onClick={onClick}>
-        <img
-          className={styles.buttonImg}
-          src="/images/search.png"
-          alt="search"
-        />
+      <button
+        className="bg-gray-400 p-1 outline-none hover:opacity-90"
+        type="submit"
+        onClick={onClick}
+      >
+        <img className="h-full" src="/images/search.png" alt="search" />
       </button>
     </header>
   );
-});
+};
 
 export default SearchHeader;

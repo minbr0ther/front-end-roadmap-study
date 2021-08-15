@@ -1,30 +1,22 @@
-import React, { memo } from "react";
-import styles from "./video_item.module.css";
+import React from "react";
 
-const VideoItem = memo(
-  //memo를 통해 item이 클릭시마다 rendring 되지 않게 함
-  ({ video, video: { snippet }, onVideoClick, display }) => {
-    const displayType = display === "list" ? styles.list : styles.grid;
-
-    return (
-      <li
-        className={`${styles.container} ${displayType}`}
-        onClick={() => onVideoClick(video)}
-      >
-        <div className={styles.video}>
-          <img
-            className={styles.thumbnail}
-            src={snippet.thumbnails.medium.url}
-            alt="video thumbnail"
-          />
-          <div className={styles.metadata}>
-            <p className={styles.title}>{snippet.title}</p>
-            <p className={styles.channel}>{snippet.channelTitle}</p>
-          </div>
+const VideoItem = ({ video: { snippet } }) => {
+  //deconstructing을 활용해서 props.video. 생략
+  return (
+    <li className="w-1/2 p-1">
+      <div className="shadow-md w-full h-full flex items-center border border-gray-300 cursor-pointer transform transition duration-250 hover:scale-105">
+        <img
+          className="w-2/5"
+          src={snippet.thumbnails.medium.url}
+          alt="video thumbnail"
+        />
+        <div className="ml-2">
+          <p className="text-base">{snippet.title}</p>
+          <p className="text-sm">{snippet.channelTitle}</p>
         </div>
-      </li>
-    );
-  }
-);
+      </div>
+    </li>
+  );
+};
 
 export default VideoItem;
